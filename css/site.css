@@ -77,3 +77,11 @@ footer {
   color: var(--ay-secondary-color);
   padding-right: 0.5rem;
 }
+
+.even {
+  font-weight: bolder;
+}
+
+.odd {
+  font-weight: 100;
+}
