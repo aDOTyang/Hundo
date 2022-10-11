@@ -52,18 +52,15 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-end">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="/index.html"
-                  >Home</a
-                >
+                <a class="nav-link" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/app.html">The App</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/code.html">The Code</a>
+                <a class="nav-link active" aria-current="page" href="/code.html"
+                  >The Code</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">The Repo</a>
@@ -89,10 +86,61 @@
         <div class="col-12 col-lg-8">
           <pre class="line-numbers">
                     <code class="language-js">
-                        function displayMessage() {
-                            let message = document.getElementById("message").value;
-                            alert(message);
-                          }
+                        function getValues() {
+  let startValue = document.getElementById("startValue").value;
+  let endValue = document.getElementById("endValue").value;
+
+  // string values from HTML need to be parsed into numbers
+  startValue = parseInt(startValue);
+  endValue = parseInt(endValue);
+
+  if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+    // generate numbers based on user input
+    let numbers = generateNumbers(startValue, endValue);
+    // display numbers on page
+    displayNumbers(numbers);
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "NO HUNDO",
+      text: "Only integers are allowed for HUNDO!",
+    });
+  }
+}
+
+function generateNumbers(startValue, endValue) {
+  let numbers = [];
+
+  for (let i = startValue; i <= endValue; i++) {
+    numbers.push(i);
+  }
+  return numbers;
+}
+
+function displayNumbers(numbers) {
+  let className = "even";
+  let templateRows = "";
+  for (let i = 0; i < numbers.length; i++) {
+    let number = numbers[i];
+    if (number % 2 == 0) {
+      className = "even";
+    } else {
+      className = "odd";
+    }
+
+    if (i % 10 == 0) {
+      templateRows += "<tr>";
+    }
+
+    templateRows += `<td class="${className}">${number}</td>`;
+
+    if ((i + 1) % 10 == 0) {
+      templateRows += "</tr>";
+    }
+  }
+  document.getElementById("results").innerHTML = templateRows;
+}
+
                         </code>
                 </pre>
         </div>

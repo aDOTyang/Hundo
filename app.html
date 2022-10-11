@@ -79,18 +79,17 @@
     </header>
 
     <main class="content container">
-      <!-- <h1>App UI Goes Here</h1>
-      <input id="message" placeholder="Enter Message Here" type="text" />
-      <button id="btnSubmit" type="button" class="btn btn-primary">
-        Display Message
-      </button> -->
-
       <div class="row gy-2 h-100 row-cols-md-2 row-cols-1">
         <div class="col border-end border-2">
           <div class="fw-bold lh-1 mb-3">
             <p>
-              Enter a starting and ending value. Press the button and the values
-              will appear.
+              Live life one loop at a time! A Javascript coding exercise using
+              loops to write a program that displays numbers from 0 to 100. Even
+              numbers are displayed in <b>bolded </b>font.
+            </p>
+            <p>
+              <h2>Instructions</h2> Enter a starting and ending value. Press the
+              button and the values will appear.
             </p>
           </div>
         </div>
@@ -100,7 +99,9 @@
             <form action="" class="row gy-2 gx-3">
               <div class="col">
                 <input
-                  type="text"
+                  type="number"
+                  min="0"
+                  max="99"
                   class="form-control"
                   id="startValue"
                   placeholder="Start Value"
@@ -109,7 +110,9 @@
               </div>
               <div class="col">
                 <input
-                  type="text"
+                  type="number"
+                  min="1"
+                  max="100"
                   class="form-control"
                   id="endValue"
                   placeholder="End Value"

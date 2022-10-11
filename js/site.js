@@ -40,8 +40,17 @@ function displayNumbers(numbers) {
     } else {
       className = "odd";
     }
+
+    if (i % 10 == 0) {
+      templateRows += "<tr>";
+    }
+
     // use tic marks, not single quotes for string interpolation and template literal
-    templateRows += `<tr><td class="${className}">${number}</td></tr>`;
+    templateRows += `<td class="${className}">${number}</td>`;
+
+    if ((i + 1) % 10 == 0) {
+      templateRows += "</tr>";
+    }
   }
   document.getElementById("results").innerHTML = templateRows;
 }
