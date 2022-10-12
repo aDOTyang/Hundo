@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>App Name:A Coding Challenge</title>
+    <title>HUNDO: A Coding Challenge</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -35,7 +35,7 @@
       <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="mainNav">
         <div class="container">
           <a class="navbar-brand" href="/index.html"
-            ><img src="/img/ALEXdark.png" height="50" class="p-1" /> App Name</a
+            ><img src="/img/ALEXdark.png" height="50" class="p-1" />HUNDO</a
           >
           <button
             class="navbar-toggler"
@@ -95,10 +95,9 @@
   endValue = parseInt(endValue);
 
   if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
-    // generate numbers based on user input
     let numbers = generateNumbers(startValue, endValue);
-    // display numbers on page
-    displayNumbers(numbers);
+  
+  displayNumbers(numbers);
   } else {
     Swal.fire({
       icon: "error",
@@ -146,9 +145,33 @@ function displayNumbers(numbers) {
         </div>
         <!-- Code Docs -->
         <div class="col-12 col-lg-4">
-          <p>The code is structured in one function</p>
-          <h5>displayMessage</h5>
-          <p>Prints out the message</p>
+          <p>
+            The code is structured in three function per typical MVC convention.
+          </p>
+          <h5>getValues()</h5>
+          <p class="mb-5">
+            The getValues() function pulls in the inputs <b>startValue</b> and
+            <b>endValue</b> from the HTML form fields and parses it into a
+            usable integer. Once the conditions have been verified, the
+            getValues() function then calls the generateNumbers() and
+            displayNumbers() functions which will calculate the intended result
+            and format the table, respectively.
+          </p>
+          <h5>generateNumbers()</h5>
+          <p class="mb-5">
+            The generateNumbers() function takes the input values from
+            getValues() and simply pushes them into an array using single
+            increments.
+          </p>
+          <h5>displayNumbers()</h5>
+          <p class="mb-5">
+            The displayNumbers() function checks the result for even/odd output
+            and styles it accordingly using custom CSS. It then further styles
+            the table so that it inserts a new table row where i is a multiple
+            of 10 for easier viewing. If i is not a multiple of 10,
+            displayNumbers() simply tells the HTML to add i to the end of the
+            existing table row.
+          </p>
         </div>
       </div>
     </main>
@@ -160,7 +183,7 @@ function displayNumbers(numbers) {
             &copy;2022 Alex Yang
           </div>
           <div class="col text-center order-0 order-lg-1">
-            <img src="/img/ALEXdark.png" height="50" />
+            <img src="/img/AYdark_250x100.png" height="50" />
           </div>
           <div class="col text-center text-lg-end order-1 order-lg-last">
             <a href="#"><i class="bi bi-linkedin socialIcon"></i></a>
