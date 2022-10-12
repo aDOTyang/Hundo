@@ -90,57 +90,48 @@
   let startValue = document.getElementById("startValue").value;
   let endValue = document.getElementById("endValue").value;
 
-    startValue = parseInt(startValue);
+  startValue = parseInt(startValue);
   endValue = parseInt(endValue);
 
   if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
     let numbers = generateNumbers(startValue, endValue);
   
-  displayNumbers(numbers);
-  } else {
+  displayNumbers(numbers); } 
+    else {
     Swal.fire({
       icon: "error",
       title: "NO HUNDO",
-      text: "Only integers are allowed for HUNDO!",
-    });
+      text: "Only integers are allowed for HUNDO!"});
+    }
   }
-}
 
 function generateNumbers(startValue, endValue) {
   let numbers = [];
 
   for (let i = startValue; i <= endValue; i++) {
-    numbers.push(i);
-  }
-  return numbers;
-}
+    numbers.push(i); }
+  return numbers; }
 
 function displayNumbers(numbers) {
   let className = "even";
   let templateRows = "";
   for (let i = 0; i < numbers.length; i++) {
     let number = numbers[i];
-    if (number % 2 == 0) {
-      className = "even";
-    } else {
-      className = "odd";
-    }
+    if (number % 2 == 0) 
+    { className = "even"; } 
+    else { className = "odd"; }
 
-    if (i % 10 == 0) {
-      templateRows += "<tr>";
-    }
+    if (i % 10 == 0) 
+    { templateRows += "<tr>"; }
 
     templateRows += `<td class="${className}">${number}</td>`;
 
-    if ((i + 1) % 10 == 0) {
-      templateRows += "</tr>";
-    }
+    if ((i + 1) % 10 == 0) 
+    { templateRows += "</tr>"; }
   }
-  document.getElementById("results").innerHTML = templateRows;
-}
-
-                        </code>
-                </pre>
+  document.getElementById("results").innerHTML = templateRows; }
+  </code>
+    </pre>
         </div>
         <!-- Code Docs -->
         <div class="col-12 col-lg-4">
@@ -168,7 +159,7 @@ function displayNumbers(numbers) {
             and styles it accordingly using custom CSS. It then further styles
             the table so that it inserts a new table row where i is a multiple
             of 10 for easier viewing. If i is not a multiple of 10,
-            displayNumbers() simply tells the HTML to add i to the end of the
+            displayNumbers() simply tells the HTML to append i to the end of the
             existing table row.
           </p>
         </div>
