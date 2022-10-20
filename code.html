@@ -138,10 +138,11 @@ function displayNumbers(numbers) {
         <!-- Code Docs -->
         <div class="col-12 col-lg-4">
           <p>
-            The code is structured in three function per typical MVC convention.
+            The code for HUNDO is structured in three functions to show clear
+            separation of concerns.
           </p>
           <h5>getValues()</h5>
-          <p class="mb-5">
+          <p>
             The getValues() function pulls in the inputs <b>startValue</b> and
             <b>endValue</b> from the HTML form fields and parses it into a
             usable integer. Once the conditions have been verified, the
@@ -150,19 +151,20 @@ function displayNumbers(numbers) {
             and format the table, respectively.
           </p>
           <h5>generateNumbers()</h5>
-          <p class="mb-5">
+          <p>
             The generateNumbers() function takes the input values from
-            getValues() and simply pushes them into an array using single
-            increments.
+            getValues() and simply pushes them into an array using a
+            decrementing for loop.
           </p>
           <h5>displayNumbers()</h5>
-          <p class="mb-5">
+          <p>
             The displayNumbers() function checks the result for even/odd output
             and styles it accordingly using custom CSS. It then further styles
             the table so that it inserts a new table row where i is a multiple
             of 10 for easier viewing. If i is not a multiple of 10,
             displayNumbers() simply tells the HTML to append i to the end of the
-            existing table row.
+            existing table row. This makes it super easy to see which numbers
+            are divisible by which divisors in a fun, wacky way!
           </p>
         </div>
       </div>
